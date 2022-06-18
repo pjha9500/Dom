@@ -19,3 +19,34 @@ for(let i=0;i<xyz.length;i++)
 {
     xyz[i].style.backgroundColor="green";
 }
+
+var lists=document.querySelector('#items')
+console.log(lists.parentElement);
+console.log(lists.lastElementChild);
+console.log(lists.lastChild);//it gives #text
+console.log(lists.children);
+console.log(lists.firstChild);
+console.log(lists.firstElementChild);
+console.log(lists.nextSibling);
+console.log(lists.firstElementChild.nextElementSibling);
+console.log(lists.previousSibling);
+console.log(lists.previousElementSibling);
+
+// creating Dom elements and appending at last
+var newdiv=document.createElement('li')
+newdiv.innerHTML="item 5";
+document.getElementById('items').appendChild(newdiv);
+
+//inserting before
+
+var insertionnode=document.createElement('p');
+insertionnode.innerHTML='HEllo';
+let position=document.getElementById('main-header');
+position.insertBefore(insertionnode,position.childNodes[0]);
+//----------------------(element ,postion before)----//
+
+
+var insertnode=document.createElement('p');
+insertnode.innerHTML='HEllo';
+let newpos=document.getElementById('items');
+newpos.insertBefore(insertnode,newpos.childNodes[0]);
