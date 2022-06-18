@@ -9,3 +9,13 @@ for(let i=0;i<items.length;i++)
 {
     items[i].style.fontWeight='bold';
 }
+
+//Add a new li element without the same class Name
+//And try editing it with getelementsbyclassname and then by getelementbytagname
+
+var xyz=document.getElementsByTagName('li');
+
+for(let i=0;i<xyz.length;i++)
+{
+    xyz[i].style.backgroundColor="green";
+}
