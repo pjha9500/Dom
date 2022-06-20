@@ -50,3 +50,46 @@ var insertnode=document.createElement('p');
 insertnode.innerHTML='HEllo';
 let newpos=document.getElementById('items');
 newpos.insertBefore(insertnode,newpos.childNodes[0]);
+
+
+// delete and edit functionality
+
+let form=document.getElementById('addForm');
+var itemlist=document.getElementById('items');
+//form submit event
+form.addEventListener("submit",myfunction);
+
+function myfunction(e)
+{
+    e.preventDefault();
+    let element=document.createElement('li');
+    element.innerText=document.getElementById('item').value;
+    element.className='list-group-item'
+    let button=document.createElement('button');
+    button.className="btn btn-danger btn-sm float-right delete";
+    button.innerHTML='X';
+    element.appendChild(button);
+    document.getElementById('items').appendChild(element);
+
+
+}
+//form delete event
+itemlist.addEventListener('click',deletes);
+function deletes(e)
+{
+    e.preventDefault();
+    if(e.target.classList.contains('delete'))
+    {
+        if(confirm("Are you sure ?"))
+        {
+                let li=e.target.parentElement;
+                itemlist.removeChild(li);
+        }
+        
+    }
+
+
+
+}
+
+
